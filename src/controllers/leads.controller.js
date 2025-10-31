@@ -1,5 +1,5 @@
 import Lead from '../models/Lead.js';
-import { parseLeadsCsv } from '../services/csv/csvService.js';
+import { parseLeadsCsv } from '../services/csv/csvServices.js';
 
 export async function uploadLeads(req, res, next) {
   try {
