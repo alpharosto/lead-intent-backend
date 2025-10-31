@@ -14,6 +14,7 @@ app.use('/offer', offerRoutes);
 app.use('/leads', leadsRoutes);
 app.use('/', scoreRoutes);
 app.use('/', resultsRoutes);
+app.get('/', (_, res) =>res.send('Lead Intent Scoring API'));
 app.get('/health', (_, res) => res.json({ ok: true }));
 
 export default app;
