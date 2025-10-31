@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.use('/offer', offerRoutes);
 app.use('/leads', leadsRoutes);
-app.use('/score', scoreRoutes);
-app.use('/result', resultsRoutes);
+app.use('/', scoreRoutes);
+app.use('/', resultsRoutes);
 
 app.get('/health', (_, res) => res.json({ ok: true }));
 
