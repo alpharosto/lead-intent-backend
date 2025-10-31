@@ -1,5 +1,38 @@
 # Lead Intent Backend (Node.js + Express + MongoDB)
 
+**Live API:**  
+👉 [https://lead-intent-backend-task.onrender.com](https://lead-intent-backend-task.onrender.com)
+
+---
+
+## 🧠 Overview
+
+This backend service classifies **B2B leads** by intent using both:
+- ✅ **Rule-based scoring** (role, industry, data completeness)
+- 🤖 **AI-based scoring** (OpenAI GPT model)
+
+It allows:
+1. Uploading an Offer (product or service description)
+2. Uploading a CSV of prospect leads
+3. Automatically scoring them (0–100)
+4. Fetching scored results (JSON or CSV)
+
+---
+
+## 🧩 Tech Stack
+
+| Component | Description |
+|------------|--------------|
+| **Runtime** | Node.js (v18+) |
+| **Framework** | Express.js |
+| **Database** | MongoDB (via Mongoose) |
+| **AI Model** | OpenAI GPT (or fallback if quota exceeded) |
+| **Logging** | Pino |
+| **Deployment** | Docker + Render |
+| **Testing** | Jest + Supertest |
+
+---
+
 ## What this does
 - Ingests **Offer** via `POST /offer`
 - Ingests **Leads CSV** via `POST /leads/upload` (columns: name,role,company,industry,location,linkedin_bio)
