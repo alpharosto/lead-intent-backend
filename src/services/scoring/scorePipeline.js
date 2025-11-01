@@ -1,7 +1,7 @@
 import Offer from '../../models/Offer.js';
 import Result from '../../models/Result.js';
 import { ruleScore } from './ruleScorer.js';
-import { aiScore } from './aiScorer.js';
+import { geminiScore } from "./geminiScorer.js";
 
 export async function scoreAllLeads(LeadModel) {
   const offer = await Offer.findOne();
@@ -17,7 +17,7 @@ export async function scoreAllLeads(LeadModel) {
   // For big lists: consider concurrency limiting (p-limit) and retries
   for (const lead of leads) {
     const rScore = ruleScore(lead);
-    const { intent, ai_points, reasoning } = await aiScore(lead, offer);
+    const { intent, ai_points, reasoning } = await geminiScore(lead, offer);
     const finalScore = Math.min(rScore + ai_points, 100);
 
     const saved = await Result.create({

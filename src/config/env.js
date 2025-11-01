@@ -4,7 +4,7 @@ dotenv.config();
 export const env = {
   port: process.env.PORT || 8080,
   mongoUri: process.env.MONGODB_URI,
-  openAiKey: process.env.OPENAI_API_KEY || '',
+  geminiKey: process.env.GEMINI_API_KEY || '',
   icpIndustries: (process.env.ICP_INDUSTRIES || '')
     .split(',')
     .map(s => s.trim())
